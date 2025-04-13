@@ -29,6 +29,10 @@ android {
         jvmTarget = "11"
     }
 
+    testOptions {
+        unitTests.isReturnDefaultValues = true
+    }
+
     publishing {
         singleVariant("release") {
             withSourcesJar()
@@ -38,7 +42,14 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.android.material)
 
+    api(libs.stack)
+    api(libs.redux)
+
+    testImplementation(libs.kotlin.test)
 }
 
 publishing {
@@ -54,7 +65,8 @@ publishing {
                 pom {
                     packaging = "aar"
                     name = "Android Navigation Framework"
-                    description = "A lightweight and flexible navigation framework for Android, designed to manage screen navigation using a stack-based approach with Fragments."
+                    description =
+                        "A lightweight and flexible navigation framework for Android, designed to manage screen navigation using a stack-based approach with Fragments."
                     licenses {
                         license {
                             name = "The MIT License (MIT)"

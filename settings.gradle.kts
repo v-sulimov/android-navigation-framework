@@ -16,6 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+            name = "vsulimovRepositoryReleases"
+            url = uri("https://maven.vsulimov.com/releases")
+        }
     }
 }
 
