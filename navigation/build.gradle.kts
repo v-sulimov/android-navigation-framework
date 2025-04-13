@@ -38,7 +38,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.androidx.fragment.ktx)
+    api(libs.stack)
+    api(libs.redux)
 
+    testImplementation(libs.kotlin.test)
 }
 
 publishing {
@@ -54,7 +58,8 @@ publishing {
                 pom {
                     packaging = "aar"
                     name = "Android Navigation Framework"
-                    description = "A lightweight and flexible navigation framework for Android, designed to manage screen navigation using a stack-based approach with Fragments."
+                    description =
+                        "A lightweight and flexible navigation framework for Android, designed to manage screen navigation using a stack-based approach with Fragments."
                     licenses {
                         license {
                             name = "The MIT License (MIT)"
